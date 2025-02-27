@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<iframe style="background-color:yellow">
+@Html.Raw(TempData["tdsMethodContent"])
+</iframe>
+
+<input type="hidden" value="@TempData["reference"]" />
+<input type="hidden" value="@TempData["txId"]" />
+<input type="hidden" value="@TempData["transactionId"]" />
+
+
+<script>
+        window.onload = function () {
+        setTimeout(function () {
+            console.log('Submitting 3DS V2 Step 2 form');
+            document.getElementById('threedsv2_step2-form').submit();
+        }, 13000);
+    };
+
+</script>
